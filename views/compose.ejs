@@ -1,0 +1,32 @@
+<%- include('header'); -%>
+
+
+
+
+<h1>Compose</h1>
+<form action="/compose" method="post">
+
+    <div class="form-group">
+        <label for="">Title</label>
+     <textarea class="form-control" name="title" cols="150" rows="1"></textarea>
+        <label for="">Post</label>
+        <textarea class="form-control" name="compose" id="" cols="150" rows="5"></textarea>
+        <label for="">Author Name</label>
+        <textarea class="form-control" name="author" id="" cols="100" rows="1"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Publish</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('footer'); -%>

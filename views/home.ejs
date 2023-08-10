@@ -1,0 +1,30 @@
+<%- include('header'); -%>
+
+<h1>Home</h1>
+<p><%=homeStartingContent %></p>
+
+<h1>Blogs</h1>
+ 
+
+    <% for(var i=0;i<post.length;i++){   %>
+        <h2><%= post[i].title%> </h2>
+        <h4>By- <%=post[i].author%></h4>
+        <p><%= post[i].post.substring(0,100) %> ...
+        <a href="/posts/<%= post[i]._id %>">Read More</a>
+        </p> 
+        <% } %>
+      
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('footer'); -%>

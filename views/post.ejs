@@ -1,0 +1,66 @@
+<%- include('header'); -%>
+
+<h1><%= title %></h1>
+<h4>> <%=author%></h4>
+<p> <%= content %></p>
+<script src="https://use.fontawesome.com/fe459689b4.js"></script>
+   <form action="/posts/<%=id%>" method="post">
+
+       <button class="btn" id="green" name="like" value="like" type="submit"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" ></i><%=likecount%></button>
+       <button class="btn" id="red" name="dislike" value="dislike" type="submit"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true" ></i><%=dislikecount%></button>
+       <input type="hidden" name="idofelement" value="<%=id%>"></input>
+    </form>
+    
+    <h1>New Comment</h1>
+    
+    <form action="/posts/<%=id%>" method="post">
+
+    <div class="form-group">
+         
+     
+        <label for="">Comment</label>
+        <textarea class="form-control" name="comment" id="" cols="50" rows="5"></textarea>
+        <label for="">Name</label>
+        <textarea class="form-control" name="name" id="" cols="50" rows="1"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Comment</button>
+    <input type="hidden" name="idofelement" value="<%=id%>"></input>
+</form>
+    
+<!-- <h1> Comments</h1>
+<div class="comments">
+   <% for(let i=0;i<comments.length;i++){  %>
+        <div class="comment" >
+           <p><%=comments[i].review %></p>
+           <p><%=comments[i].name %></p>
+        </div>
+  <%  } %>
+</div> -->
+<section id="Comment">
+
+    <h2>Comments</h2>
+    
+    <div class="row">
+        <% for(let i=0;i<comments.length;i++){  %>
+      <div class="p-col col-lg-6 ">
+        <div class="card" >
+            <!-- <div class="card-body"> -->
+            <div class="comment" >
+                <p><%=comments[i].review %></p>
+                <div class="name">
+                    <p>Written By <%=comments[i].name %></p>
+            </div>
+             </div>
+       
+        
+          </div>
+        </div>
+        <%  } %>
+      </div>
+       
+    </div>
+     </section>
+
+
+<%- include('footer'); -%>
+<!-- #f8f8f8 -->
